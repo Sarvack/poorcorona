@@ -1,6 +1,6 @@
 <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+          Copyright &copy; 2020
         </div>
         <div class="footer-right">
           
@@ -19,11 +19,18 @@
   <script src="{{ asset('public/assets/js/stisla.js') }}"></script>
   <script src="{{ asset('public/assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
   <!-- JS Libraies -->
-
+  <script src="{{ asset('public/assets/modules/jquery.sparkline.min.js') }}"></script>
+  <script src="{{ asset('public/assets/modules/chart.min.js') }}"></script>
+  <script src="{{ asset('public/assets/modules/jqvmap/dist/jquery.vmap.min.js') }}"></script>
+  <script src="{{ asset('public/assets/modules/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+  <script src="{{ asset('public/assets/modules/jqvmap/dist/maps/jquery.vmap.indonesia.js') }}"></script>
   <!-- Page Specific JS File -->
-  
+  <script src="{{ asset('public/assets/js/page/components-statistic.js') }}"></script>
+
   <!-- Template JS File -->
   <script src="{{ asset('public/assets/js/scripts.js') }}"></script>
   <script src="{{ asset('public/assets/js/custom.js') }}"></script>
+
+  @yield('addition')
 </body>
 </html>

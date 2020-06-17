@@ -38,7 +38,8 @@
 	<div class="form-group">
         <label>Password</label>
         <input type="password" class="form-control" name="password">
-    </div>    <div class="form-group">
+    </div>    
+    <div class="form-group">
         <button class="btn btn-primary btn-block">Simpan User</button>
     </div>
 </form>

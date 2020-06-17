@@ -7,36 +7,6 @@
 					</div>
 					<!-- /ad widget -->
 
-					<!-- social widget -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2 class="title">Social Media</h2>
-						</div>
-						<div class="social-widget">
-							<ul>
-								<li>
-									<a href="#" class="social-facebook">
-										<i class="fa fa-facebook"></i>
-										<span>21.2K<br>Followers</span>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="social-twitter">
-										<i class="fa fa-twitter"></i>
-										<span>10.2K<br>Followers</span>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="social-google-plus">
-										<i class="fa fa-google-plus"></i>
-										<span>5K<br>Followers</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- /social widget -->
-
 					<!-- category widget -->
 					<div class="aside-widget">
 						<div class="section-title">
@@ -44,15 +14,34 @@
 						</div>
 						<div class="category-widget">
 							<ul>
-								<li><a href="#">Lifestyle <span>451</span></a></li>
-								<li><a href="#">Fashion <span>230</span></a></li>
-								<li><a href="#">Technology <span>40</span></a></li>
-								<li><a href="#">Travel <span>38</span></a></li>
-								<li><a href="#">Health <span>24</span></a></li>
+								@foreach($category_widget as $hasil)
+								<li><a href="{{ route('blog.category', $hasil->slug) }}">{{ $hasil->name }} <span>{{ $hasil->posts->count() }}</span></a></li>
+								@endforeach
 							</ul>
 						</div>
 					</div>
 					<!-- /category widget -->
+
+					<!-- post widget -->
+					<div class="aside-widget">
+						<div class="section-title">
+							<h2 class="title">Popular Posts</h2>
+						</div>
+						<!-- post -->
+						@foreach($data as $post_terbaru)
+						<div class="post post-widget">
+							<a class="post-img" href="{{ route('blog.isi', $post_terbaru->slug ) }}"><img src="{{ asset($post_terbaru->gambar)}}" alt=""></a>
+							<div class="post-body">
+								<div class="post-category">
+									<a href="{{ route('blog.category',$post_terbaru->category) }}">{{ $post_terbaru->category->name }}</a>
+								</div>
+								<h3 class="post-title"><a href="{{ route('blog.isi', $post_terbaru->slug ) }}">{{ $post_terbaru->judul }}</a></h3>
+							</div>
+						</div>
+						@endforeach
+						<!-- /post -->
+					</div>
+					<!-- /post widget -->
 
 					<!-- newsletter widget -->
 					<div class="aside-widget">
@@ -61,68 +50,12 @@
 						</div>
 						<div class="newsletter-widget">
 							<form>
-								<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
+								<p>Subscribe to get latest information</p>
 								<input class="input" name="newsletter" placeholder="Enter Your Email">
-								<button class="primary-button">Subscribe</button>
+								<button class="primary-button"><a href="mailto:sarvaclever@gmail.com">Subcribes</a></button>
 							</form>
 						</div>
 					</div>
 					<!-- /newsletter widget -->
 
-					<!-- post widget -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2 class="title">Popular Posts</h2>
-						</div>
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="./img/widget-3.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="./img/widget-2.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Technology</a>
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="./img/widget-4.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Health</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="./img/widget-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Health</a>
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-					</div>
-					<!-- /post widget -->
 				</div>

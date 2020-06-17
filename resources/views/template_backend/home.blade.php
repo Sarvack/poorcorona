@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="{{ asset('public/assets/modules/select2/dist/css/select2.min.css') }}">
 
   <!-- CSS Libraries -->
+  <link rel="stylesheet" href="{{ asset('public/assets/modules/jqvmap/dist/jqvmap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/assets/modules/flag-icon-css/css/flag-icon.min.css') }}">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
@@ -43,7 +45,7 @@
             <img alt="image" src="{{ asset('public/assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a href="features-profile.html" class="dropdown-item has-icon">
+              <a href="{{ url('/user') }}" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
               <div class="dropdown-divider"></div>

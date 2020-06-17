@@ -7,9 +7,9 @@
 				<div class="col-md-3">
 					<div class="footer-widget">
 						<div class="footer-logo">
-							<a href="index.html" class="logo"><img src="{{ asset('public/frontend/img/logo-alt.png') }}" alt=""></a>
+							<a href="index.html" class="logo"><img src="{{ asset('public/frontend/img/poor_corona-alt.png') }}" alt=""></a>
 						</div>
-						<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
+						<p>Simple blog to prevent corona virus from trusted sources.</p>
 						<ul class="contact-social">
 							<li><a href="#" class="social-facebook"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#" class="social-twitter"><i class="fa fa-twitter"></i></a></li>
@@ -23,11 +23,9 @@
 						<h3 class="footer-title">Categories</h3>
 						<div class="category-widget">
 							<ul>
-								<li><a href="#">Lifestyle <span>451</span></a></li>
-								<li><a href="#">Fashion <span>230</span></a></li>
-								<li><a href="#">Technology <span>40</span></a></li>
-								<li><a href="#">Travel <span>38</span></a></li>
-								<li><a href="#">Health <span>24</span></a></li>
+								@foreach($category_widget as $hasil)
+								<li><a href="{{ route('blog.category', $hasil->slug) }}">{{ $hasil->name }} <span>{{ $hasil->posts->count() }}</span></a></li>
+								@endforeach
 							</ul>
 						</div>
 					</div>
@@ -37,17 +35,9 @@
 						<h3 class="footer-title">Tags</h3>
 						<div class="tags-widget">
 							<ul>
-								<li><a href="#">Social</a></li>
-								<li><a href="#">Lifestyle</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Technology</a></li>
-								<li><a href="#">Fashion</a></li>
-								<li><a href="#">Life</a></li>
-								<li><a href="#">News</a></li>
-								<li><a href="#">Magazine</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Health</a></li>
+								@foreach($footer_tag as $hasil)
+								<li><a href="{{ route('blog.list') }}">{{ $hasil->name }}</a></li>
+								@endforeach
 							</ul>
 						</div>
 					</div>
@@ -57,7 +47,7 @@
 						<h3 class="footer-title">Newsletter</h3>
 						<div class="newsletter-widget">
 							<form>
-								<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
+								<p>Subscribe to get latest information</p>
 								<input class="input" name="newsletter" placeholder="Enter Your Email">
 								<button class="primary-button">Subscribe</button>
 							</form>
@@ -71,18 +61,17 @@
 			<div class="footer-bottom row">
 				<div class="col-md-6 col-md-push-6">
 					<ul class="footer-nav">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contacts</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">Privacy</a></li>
+						<li><a href="{{ url('') }}">Home</a></li>
+						<li><a href="{{ route('blog.list') }}">Category</a></li>
+						<li><a href="{{ route('blog.list') }}">List Post</a></li>
+						<li><a href="{{ route('blog.pasien') }}">Data Corona</a></li>
+						<li><a href="{{ route('blog.hotline') }}">Hotline</a></li>
 					</ul>
 				</div>
 				<div class="col-md-6 col-md-pull-6">
 					<div class="footer-copyright">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+
 					</div>
 				</div>
 			</div>
