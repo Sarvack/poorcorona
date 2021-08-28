@@ -22,6 +22,7 @@
 	<meta name="twitter:card" content="">
 
 	<title>Poor &mdash; Corona </title>
+	<link rel="shortcut icon" href="{{ asset('public/favicon.ico') }}" >
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">

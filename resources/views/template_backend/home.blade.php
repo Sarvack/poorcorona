@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Poor Corona &mdash; Gone</title>
+  <link rel="shortcut icon" href="{{ asset('public/favicon.ico') }}" >
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{ asset('public/assets/modules/bootstrap/css/bootstrap.min.css') }}">
